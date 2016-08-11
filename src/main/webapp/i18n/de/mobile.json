@@ -1,0 +1,23 @@
+{
+    "ap10App": {
+        "mobile" : {
+            "home": {
+                "title": "Mobiles",
+                "createLabel": "Mobile erstellen",
+                "createOrEditLabel": "Mobile erstellen oder bearbeiten",
+                "search": "Suche nach Mobile"
+            },
+            "created": "Mobile erstellt mit ID {{ param }}",
+            "updated": "Mobile aktualisiert mit ID {{ param }}",
+            "deleted": "Mobile gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Mobile {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Mobile"
+            },
+            "name": "Name",
+            "model": "Model"
+        }
+    }
+}

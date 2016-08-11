@@ -1,0 +1,21 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "model",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160810041805",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "mobile",
+    "pagination": "infinite-scroll"
+}

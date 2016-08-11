@@ -1,0 +1,12 @@
+version: '2'
+services:
+    ap10-postgresql:
+        container_name: ap10-postgresql
+        image: postgres:9.5.3
+        # volumes:
+        #     - ~/volumes/jhipster/ap10/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=ap10
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
