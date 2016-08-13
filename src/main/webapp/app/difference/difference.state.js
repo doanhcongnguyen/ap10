@@ -11,10 +11,9 @@
         $stateProvider
         .state('difference', {
             parent: 'app',
-            url: '/',
+            url: '/difference',
             data: {
-                authorities: ['ROLE_ADMIN'],
-                pageTitle: 'difference.title'
+                authorities: ['ROLE_ADMIN', 'ROLE_USER']
             },
             views: {
                 'content@': {

@@ -1,9 +1,9 @@
 {
     "home": {
-        "title": "Welcome, Java Hipster!",
-        "subtitle": "This is your homepage",
+        "title": "Welcome, Ap10!",
+        "subtitle": "This is my first web",
         "logged": {
-            "message": "You are logged in as user \"{{username}}\"."
+            "message": "\"{{username}}\" - Somethings new."
         },
         "question": "If you have any question on JHipster:",
         "link": {
