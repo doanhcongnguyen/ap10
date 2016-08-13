@@ -1,9 +1,9 @@
 {
     "home": {
-        "title": "Welcome, Ap10!",
+        "title": "Welcome, {{username}}!",
         "subtitle": "This is my first web",
         "logged": {
-            "message": "\"{{username}}\" - Somethings new."
+            "message": "Something new."
         },
         "question": "If you have any question on JHipster:",
         "link": {

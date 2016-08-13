@@ -42,6 +42,7 @@
                 }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('user-management');
+                    $translatePartialLoader.addPart('difference');
                     return $translate.refresh();
                 }]
 

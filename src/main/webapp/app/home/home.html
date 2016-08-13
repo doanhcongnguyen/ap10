@@ -3,12 +3,11 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-8">
-            <h1 translate="home.title">Welcome Ap10!</h1>
-            <p class="lead" translate="home.subtitle">This is my first web</p>
+            <h1 translate="home.title"  translate-values="{username: '{{vm.account.login}}'}">Welcome {{vm.account.login}}!</h1>
 
             <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
-                    You are logged in as user "{{vm.account.login}}".
+                <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message">
+                    Something new.
                 </div>
             </div>
         </div>
