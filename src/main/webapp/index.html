@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="google" value="notranslate">
     <meta name="viewport" content="width=device-width">
+    <base href="/">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css content/css/vendor.css -->
     <!-- bower:css -->
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css">
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
@@ -24,14 +26,15 @@
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
     <div class="container">
         <div class="well" ui-view="content">
             <!-- Angular views -->
         </div>
 
-        <div class="navbar navbar-fixed-bottom">
-            <div translate="footer" class="align-center">Welcome hell</div>
+        <div class="navbar navbar-fixed-bottom" ng-cloak>
+            <div translate="footer" class="align-center">Ap10</div>
 		</div>
     </div>
 
@@ -54,6 +57,7 @@
     <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
     <script src="bower_components/arrive/src/arrive.js"></script>
     <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -74,6 +78,8 @@
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 
@@ -141,8 +147,11 @@
     <script src="app/components/util/jhi-item-count.directive.js"></script>
     <script src="app/components/util/date-util.service.js"></script>
     <script src="app/components/util/data-util.service.js"></script>
+    <script src="app/components/util/compare-to.directive.js"></script>
+    <script src="app/components/util/check-email.directive.js"></script>
     <script src="app/components/util/capitalize.filter.js"></script>
     <script src="app/components/util/base64.service.js"></script>
+    <script src="app/components/login/login.state.js"></script>
     <script src="app/components/login/login.service.js"></script>
     <script src="app/components/login/login.controller.js"></script>
     <script src="app/components/language/language.service.js"></script>

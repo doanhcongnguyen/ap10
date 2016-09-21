@@ -12,7 +12,7 @@
             parent: 'app',
             url: '/',
             data: {
-                authorities: []
+                authorities: ['ROLE_USER', 'ROLE_ADMIN']
             },
             views: {
                 'content@': {

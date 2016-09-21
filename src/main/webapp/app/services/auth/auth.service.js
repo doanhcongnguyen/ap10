@@ -46,7 +46,7 @@
                 var isAuthenticated = Principal.isAuthenticated();
 
                 // an authenticated user can't access to login and register pages
-                if (isAuthenticated && $rootScope.toState.parent === 'account' && ($rootScope.toState.name === 'login' || $rootScope.toState.name === 'register')) {
+                if (isAuthenticated && ($rootScope.toState.name === 'login' || $rootScope.toState.name === 'register')) {
                     $state.go('home');
                 }
 
@@ -61,16 +61,13 @@
                     if (isAuthenticated) {
                         // user is signed in but not authorized for desired state
                         $state.go('accessdenied');
-                    }
-                    else {
+                    } else {
                         // user is not authenticated. stow the state they wanted before you
                         // send them to the login service, so you can return them when you're done
                         storePreviousState($rootScope.toState.name, $rootScope.toStateParams);
 
-                        // now, send them to the signin state so they can log in
-                        $state.go('accessdenied').then(function() {
-                            LoginService.open();
-                        });
+                        // Go to the login page
+                        $state.go('login');
                     }
                 }
             }

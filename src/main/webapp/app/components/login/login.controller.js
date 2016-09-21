@@ -5,13 +5,12 @@
         .module('ap10App')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance'];
+    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', 'AlertService', '$translate'];
 
-    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance) {
+    function LoginController ($rootScope, $state, $timeout, Auth, AlertService, $translate) {
         var vm = this;
 
         vm.authenticationError = false;
-        vm.cancel = cancel;
         vm.credentials = {};
         vm.login = login;
         vm.password = null;
@@ -29,7 +28,6 @@
                 rememberMe: true
             };
             vm.authenticationError = false;
-            $uibModalInstance.dismiss('cancel');
         }
 
         function login (event) {
@@ -40,7 +38,6 @@
                 rememberMe: vm.rememberMe
             }).then(function () {
                 vm.authenticationError = false;
-                $uibModalInstance.close();
                 if ($state.current.name === 'register' || $state.current.name === 'activate' ||
                     $state.current.name === 'finishReset' || $state.current.name === 'requestReset') {
                     $state.go('home');
@@ -53,20 +50,33 @@
                 if (Auth.getPreviousState()) {
                     var previousState = Auth.getPreviousState();
                     Auth.resetPreviousState();
-                    $state.go(previousState.name, previousState.params);
+                    if (previousState.name === 'login') {
+                        $state.go('home');
+                    } else {
+                        $state.go(previousState.name, previousState.params);
+                    }
+                } else {
+                	$state.go('home');
                 }
-            }).catch(function () {
+            }).catch(function (response) {
+			    if (response && response.status === 403) {
+                    $translate('login.messages.error.inactive').then(function (message) {
+                        AlertService.error(message);
+                    });
+                } else {
+                    $translate('login.messages.error.authentication').then(function (message) {
+                        AlertService.error(message);
+                    });
+                }
                 vm.authenticationError = true;
             });
         }
 
-        function register () {
-            $uibModalInstance.dismiss('cancel');
+        function register () {            
             $state.go('register');
         }
 
         function requestResetPassword () {
-            $uibModalInstance.dismiss('cancel');
             $state.go('requestReset');
         }
     }
