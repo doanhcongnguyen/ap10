@@ -17,6 +17,7 @@
             hasAuthority: hasAuthority,
             identity: identity,
             isAuthenticated: isAuthenticated,
+            currentIdentity: currentIdentity,
             isIdentityResolved: isIdentityResolved
         };
 
@@ -91,6 +92,10 @@
 
         function isAuthenticated () {
             return _authenticated;
+        }
+
+        function currentIdentity() {
+            return _identity;
         }
 
         function isIdentityResolved () {

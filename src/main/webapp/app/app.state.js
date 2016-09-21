@@ -5,9 +5,9 @@
         .module('ap10App')
         .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
+    stateConfig.$inject = ['$stateProvider', '$locationProvider'];
 
-    function stateConfig($stateProvider) {
+    function stateConfig($stateProvider, $locationProvider) {
         $stateProvider.state('app', {
             abstract: true,
             views: {
@@ -28,5 +28,13 @@
                 }]
             }
         });
+	
+        //check browser support
+        if(window.history && window.history.pushState){
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+        }
     }
 })();
