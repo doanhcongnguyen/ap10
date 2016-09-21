@@ -5,7 +5,7 @@
         .module('ap10App')
         .config(bootstrapMaterialDesignConfig);
 
-    compileServiceConfig.$inject = [];
+    bootstrapMaterialDesignConfig.$inject = [];
 
     function bootstrapMaterialDesignConfig() {
         $.material.init();
