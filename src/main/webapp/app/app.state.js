@@ -29,7 +29,7 @@
             }
         });
 	
-        //check browser support
+        // Check browser support
         if(window.history && window.history.pushState){
             $locationProvider.html5Mode({
                 enabled: true,
