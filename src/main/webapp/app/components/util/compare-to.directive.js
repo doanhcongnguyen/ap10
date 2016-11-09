@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('appApp')
+        .module('ap10App')
         .directive('compareTo', compareTo);
 
     function compareTo() {

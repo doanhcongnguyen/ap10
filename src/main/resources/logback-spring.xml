@@ -35,7 +35,7 @@
     <logger name="org.hibernate.validator" level="WARN"/>
     <logger name="org.hibernate" level="WARN"/>
     <logger name="org.hibernate.ejb.HibernatePersistence" level="OFF"/>
-    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.springframework" level="ERROR"/>
     <logger name="org.springframework.web" level="WARN"/>
     <logger name="org.springframework.security" level="WARN"/>
     <logger name="org.springframework.cache" level="WARN"/>
@@ -45,8 +45,8 @@
     <logger name="sun.rmi" level="WARN"/>
     <logger name="liquibase" level="WARN"/>
     <logger name="sun.rmi.transport" level="WARN"/>
-    <logger name="org.elasticsearch" level="FATAL"/>
-    <logger name="c.a.ap10.web.websocket" level="FATAL"/>
+    <logger name="org.elasticsearch" level="ERROR"/>
+    <logger name="c.a.ap10" level="ERROR"/>
 
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <resetJUL>true</resetJUL>
