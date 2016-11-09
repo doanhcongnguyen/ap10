@@ -45,6 +45,8 @@
     <logger name="sun.rmi" level="WARN"/>
     <logger name="liquibase" level="WARN"/>
     <logger name="sun.rmi.transport" level="WARN"/>
+    <logger name="org.elasticsearch" level="FATAL"/>
+    <logger name="c.a.ap10.web.websocket" level="FATAL"/>
 
     <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
         <resetJUL>true</resetJUL>
